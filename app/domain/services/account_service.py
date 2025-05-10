@@ -18,3 +18,14 @@ class AccountService:
             AccountRepository.save_account(account)
         
         return 201, {"destination": {"id":account.id, "balance":account.balance}}
+
+    @staticmethod
+    def withdraw(origin:str, amount:int) -> tuple[int, dict]:
+        account = AccountRepository.get_account(origin)
+        if not account:
+            return 404, 0
+        
+        if account.withdraw(amount):
+            AccountRepository.save_account(account)
+            return 201, {"origin": {"id":account.id, "balance":account.balance}}
+        return 400, 0

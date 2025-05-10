@@ -13,3 +13,10 @@ def event_handler(event:dict):
             event["amount"]
         )
         return Response(content=f"{response}", status_code=status_code)
+    
+    elif event_type == "withdraw":
+        status_code, response = AccountService.withdraw(
+            event["origin"],
+            event["amount"]
+        )
+        return Response(content=f"{response}", status_code=status_code)
