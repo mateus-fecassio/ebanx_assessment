@@ -1,3 +1,4 @@
+import json
 from fastapi import APIRouter, Response
 from app.domain.services.account_service import AccountService
 
@@ -12,14 +13,14 @@ def event_handler(event:dict):
             event["destination"],
             event["amount"]
         )
-        return Response(content=f"{response}", status_code=status_code)
+        return Response(content=json.dumps(response), status_code=status_code, media_type="application/json")
     
     elif event_type == "withdraw":
         status_code, response = AccountService.withdraw(
             event["origin"],
             event["amount"]
         )
-        return Response(content=f"{response}", status_code=status_code)
+        return Response(content=json.dumps(response), status_code=status_code, media_type="application/json")
     
     elif event_type == "transfer":
         status_code, response = AccountService.transfer(
@@ -27,6 +28,6 @@ def event_handler(event:dict):
             event["destination"],
             event["amount"]
         )
-        return Response(content=f"{response}", status_code=status_code)
+        return Response(content=json.dumps(response), status_code=status_code, media_type="application/json")
     
     return Response(content="Invalid event type.", status_code=400)
