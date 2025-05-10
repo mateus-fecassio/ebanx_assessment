@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Response
-from app.api.v1.endpoints import balance
+from app.api.v1.endpoints import balance, event
 from app.infrastructure.repositories.account_repository import AccountRepository
 
 app = FastAPI(
@@ -9,6 +9,7 @@ app = FastAPI(
 )
 
 app.include_router(balance.router, prefix="/balance", tags=["balance"])
+app.include_router(event.router, prefix="/event", tags=["event"])
 
 @app.post("/reset")
 def reset():
