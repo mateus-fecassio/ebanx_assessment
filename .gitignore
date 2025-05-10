@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Test
+.pytest_cache/
+
+# Logs
+*.log
+logs/
+
+# Docker
+.docker/
+
+# Ngrok
+ngrok.yml
+ngrok.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~ 
