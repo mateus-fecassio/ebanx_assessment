@@ -86,8 +86,9 @@ curl -X POST "http://localhost:8000/event" \
 ```
 
 
-## GitHub REPO:
+## GitHub Repo and Deploy:
 [Source Code](https://github.com/mateus-fecassio/ebanx_assessment)
+[Render API Deploy](https://ebanx-assessment.onrender.com)
 
 ## Authors
 - [@mateus-fecassio](https://github.com/mateus-fecassio)
