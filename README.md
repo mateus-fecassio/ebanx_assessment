@@ -85,5 +85,9 @@ curl -X POST "http://localhost:8000/event" \
      -d '{"type":"transfer", "origin":"100", "amount":15, "destination":"300"}'
 ```
 
+
+## GitHub REPO:
+[Source Code](https://github.com/mateus-fecassio/ebanx_assessment)
+
 ## Authors
 - [@mateus-fecassio](https://github.com/mateus-fecassio)
