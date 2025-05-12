@@ -4,7 +4,10 @@ from app.domain.services.account_service import AccountService
 
 router = APIRouter()
 
-@router.post("")
+@router.post("",
+    summary="Process account events.",
+    description="Process different types of account events: deposit, withdrawal, and transfer."
+)
 def event_handler(event:dict):
     event_type = event.get("type")
     
